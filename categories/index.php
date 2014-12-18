@@ -13,16 +13,16 @@ $query = mysql_query("SELECT * FROM category WHERE 1");
 	            <div class="text-center">
 	                <img alt="image" class="img-circle m-t-xs img-responsive" src="../static/new.jpg">
 	                <div class="m-t-xs font-bold">
-	                	<i class="fa fa-code"></i> CG-?
+	                	Code
 	                </div>
 	            </div>
 	        </div>
 	        <div class="col-sm-7">
-	            <h3><strong>New Category</strong></h3>
-	            <p><i class="fa fa-flask"></i> ? Products</p>
+	            <h3><strong>Category Name</strong></h3>
+	            <p><i class="fa fa-flask"></i> No. of Products</p>
 	            <address>
 	                <strong>
-	                	<i class="fa fa-key"></i> new-category
+	                	<i class="fa fa-key"></i> Keyword
 	                </strong>
 	            </address>
 	        </div>
@@ -41,7 +41,7 @@ $query = mysql_query("SELECT * FROM category WHERE 1");
 			            <div class="text-center">
 			                <img alt="image" class="img-circle m-t-xs img-responsive" src="../static/a3.jpg">
 			                <div class="m-t-xs font-bold">
-			                	<i class="fa fa-code"></i> <?php echo $category['code']; ?>
+			                	<?php echo $category['code']; ?>
 			                </div>
 			            </div>
 			        </div>
