@@ -36,7 +36,7 @@
 		                    <span class="m-r-sm text-muted welcome-message">Welcome to SPOUTING+</span>
 		                </li>
 		                <li>
-		                    <a href="login.html">
+		                    <a href="../?logout=1">
 		                        <i class="fa fa-sign-out"></i> Log out
 		                    </a>
 		                </li>

@@ -1,6 +1,12 @@
 <?php
     $valid = true;
     require_once('partials/db.php');
+    if (isset($_GET['logout']) && $_GET['logout'] == 1) {
+        session_unset($_SESSION['user']);
+    }
+    if(isset($_SESSION['user'])){
+        header('location: dashboard');
+    }
     if (isset($_POST['login'])) {
         $query = mysql_query("SELECT * FROM users WHERE username='$_POST[username]' AND password='$_POST[password]'");
         if(mysql_num_rows($query) > 0) {
