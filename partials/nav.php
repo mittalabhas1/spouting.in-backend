@@ -38,7 +38,7 @@
             </a>
         </li>
         <li>
-            <a href="../other-links">
+            <a href="../external-links">
                 <i class="fa fa-files-o"></i>
                 <span class="nav-label">Other Links</span>
             </a>

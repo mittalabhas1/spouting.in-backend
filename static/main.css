@@ -9,10 +9,6 @@ html, body, #wrapper, #page-wrapper{
 	left: 220px;
 }
 
-#page-wrapper{
-	min-height: 800px;
-}
-
 .ibox-title{
 	/*border-color: #2f4050;*/
 	border-color: #ed5565;
@@ -24,4 +20,9 @@ textarea{
 
 .col-lg-4:hover .contact-box {
 	box-shadow: #2f4050 4px 4px 4px;
+}
+
+.contact-box{
+	height: 200px;
+	overflow: hidden;
 }

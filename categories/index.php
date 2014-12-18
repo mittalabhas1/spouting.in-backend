@@ -1,5 +1,7 @@
 <?php
 require_once('../partials/header.php');
+
+$query = mysql_query("SELECT * FROM category WHERE 1");
 ?>
 
 <div class="row">
@@ -10,7 +12,9 @@ require_once('../partials/header.php');
 	        <div class="col-sm-5">
 	            <div class="text-center">
 	                <img alt="image" class="img-circle m-t-xs img-responsive" src="../static/new.jpg">
-	                <div class="m-t-xs font-bold">&nbsp;</div>
+	                <div class="m-t-xs font-bold">
+	                	<i class="fa fa-code"></i> CG-?
+	                </div>
 	            </div>
 	        </div>
 	        <div class="col-sm-7">
@@ -20,8 +24,6 @@ require_once('../partials/header.php');
 	                <strong>
 	                	<i class="fa fa-key"></i> new-category
 	                </strong>
-	                <br>
-	                <i class="fa fa-code"></i> CG-?
 	            </address>
 	        </div>
 	        <div class="clearfix"></div>
@@ -30,7 +32,7 @@ require_once('../partials/header.php');
 	</div>
 
 	<?php
-	for ($i=0; $i < 8; $i++) { 
+	while ($category = mysql_fetch_assoc($query)) { 
 		?>
 			<div class="col-lg-4">
 			    <div class="contact-box">
@@ -38,18 +40,18 @@ require_once('../partials/header.php');
 			        <div class="col-sm-5">
 			            <div class="text-center">
 			                <img alt="image" class="img-circle m-t-xs img-responsive" src="../static/a3.jpg">
-			                <div class="m-t-xs font-bold">&nbsp;</div>
+			                <div class="m-t-xs font-bold">
+			                	<i class="fa fa-code"></i> <?php echo $category['code']; ?>
+			                </div>
 			            </div>
 			        </div>
 			        <div class="col-sm-7">
-			            <h3><strong>Driving Elements</strong></h3>
-			            <p><i class="fa fa-flask"></i> 12 Products</p>
+			            <h3><strong><?php echo $category['name']; ?></strong></h3>
+			            <p><i class="fa fa-flask"></i> <?php echo $category['products']; ?> Products</p>
 			            <address>
 			                <strong>
-			                	<i class="fa fa-key"></i> driving-elements
+			                	<i class="fa fa-key"></i> <?php echo $category['keyword']; ?>
 			                </strong>
-			                <br>
-			                <i class="fa fa-code"></i> CG-01
 			            </address>
 			        </div>
 			        <div class="clearfix"></div>
