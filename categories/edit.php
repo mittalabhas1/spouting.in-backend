@@ -2,7 +2,7 @@
 require_once('../partials/header.php');
 
 if (isset($_POST['update'])) {
-    $query = mysql_query("UPDATE category SET name='$_POST[name]', keyword='$_POST[keyword]', code='$_POST[code]', description='$_POST[description]' WHERE id='$_POST[id]'") or die(mysql_error());
+    $query = mysql_query("UPDATE category SET name='$_POST[name]', code='$_POST[code]', description='$_POST[description]' WHERE id='$_POST[id]'") or die(mysql_error());
 }
 
 if (isset($_POST['add'])) {
@@ -53,7 +53,7 @@ if(isset($_GET['id'])){
                 	<label class="col-lg-3 control-label">Keyword</label>
 
                     <div class="col-lg-9">
-                    	<input type="text" placeholder="Keyword" name="keyword" value="<?php echo $category['keyword']; ?>" class="form-control">
+                    	<input type="text" placeholder="Keyword" name="keyword" value="<?php echo $category['keyword']; ?>" class="form-control" <?php if($category){echo 'disabled';} ?>>
                     </div>
                 </div>
                 <div class="form-group">
