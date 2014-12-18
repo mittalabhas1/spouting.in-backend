@@ -13,25 +13,25 @@
             </div>
         </li>
         <li>
-            <a href="#">
+            <a href="../company">
                 <i class="fa fa-edit"></i>
                 <span class="nav-label">Company Description</span>
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="../categories">
                 <i class="fa fa-sitemap"></i>
                 <span class="nav-label">Categories</span>
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="../products">
                 <i class="fa fa-flask"></i>
                 <span class="nav-label">Products</span>
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="../other-links">
                 <i class="fa fa-files-o"></i>
                 <span class="nav-label">Other Links</span>
             </a>
