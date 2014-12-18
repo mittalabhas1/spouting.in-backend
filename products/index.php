@@ -1,7 +1,7 @@
 <?php
 require_once('../partials/header.php');
 
-$query = mysql_query("SELECT * FROM product WHERE 1");
+$query = mysql_query("SELECT product.id AS id, product.name AS name, product.code AS code, product.keyword AS keyword, product.description AS description, category.name AS category FROM product INNER JOIN category ON product.category = category.id WHERE 1");
 ?>
 
 <div class="row">
@@ -36,6 +36,7 @@ $query = mysql_query("SELECT * FROM product WHERE 1");
 		?>
 			<div class="col-lg-4">
 			    <div class="contact-box">
+				    <div class="label label-danger pull-right"><?php echo $product['category']; ?></div>
 			        <a href="edit.php?id=<?php echo $product['id']; ?>">
 			        <div class="col-sm-5">
 			            <div class="text-center">
