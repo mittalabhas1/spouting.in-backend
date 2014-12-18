@@ -13,6 +13,13 @@
             </div>
         </li>
         <li>
+            <a href="../dashboard">
+                <i class="fa fa-th-large"></i>
+                <span class="nav-label">Dashboard</span>
+                <span class="pull-right label label-info">NEW</span>
+            </a>
+        </li>
+        <li>
             <a href="../company">
                 <i class="fa fa-edit"></i>
                 <span class="nav-label">Company Description</span>
