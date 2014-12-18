@@ -1,0 +1,14 @@
+/*Global*/
+
+html, body, #wrapper, #page-wrapper{
+	height: 100%;
+}
+
+.footer{
+	position: fixed;
+	left: 220px;
+}
+
+#page-wrapper{
+	min-height: 0;
+}
