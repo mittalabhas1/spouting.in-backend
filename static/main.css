@@ -21,3 +21,7 @@ html, body, #wrapper, #page-wrapper{
 textarea{
 	resize: none;
 }
+
+.col-lg-4:hover .contact-box {
+	box-shadow: #2f4050 4px 4px 4px;
+}
