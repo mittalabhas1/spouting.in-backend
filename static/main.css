@@ -12,3 +12,12 @@ html, body, #wrapper, #page-wrapper{
 #page-wrapper{
 	min-height: 0;
 }
+
+.ibox-title{
+	/*border-color: #2f4050;*/
+	border-color: #ed5565;
+}
+
+textarea{
+	resize: none;
+}
