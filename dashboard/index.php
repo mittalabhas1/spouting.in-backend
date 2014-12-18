@@ -1,5 +1,11 @@
 <?php
 require_once('../partials/header.php');
+
+$category_query = mysql_query("SELECT * FROM category");
+$category_count = mysql_num_rows($category_query);
+
+$product_query = mysql_query("SELECT * FROM product");
+$product_count = mysql_num_rows($product_query);
 ?>
 
 <div class="row">
@@ -9,7 +15,7 @@ require_once('../partials/header.php');
                 <h5>Categories</h5>
             </div>
             <div class="ibox-content">
-                <h1 class="no-margins">10</h1>
+                <h1 class="no-margins"><?php echo $category_count; ?></h1>
                 <small>Total Categories</small>
             </div>
         </div>
@@ -20,7 +26,7 @@ require_once('../partials/header.php');
                 <h5>Products</h5>
             </div>
             <div class="ibox-content">
-                <h1 class="no-margins">120</h1>
+                <h1 class="no-margins"><?php echo $product_count; ?></h1>
                 <small>Total Products</small>
             </div>
         </div>

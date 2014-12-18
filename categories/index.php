@@ -8,7 +8,7 @@ $query = mysql_query("SELECT * FROM category WHERE 1");
 
 	<div class="col-lg-4">
 	    <div class="contact-box label-success" style="background: #1c84c6;">
-<!-- 	        <a href="profile.html"> -->
+	        <a href="edit.php">
 	        <div class="col-sm-5">
 	            <div class="text-center">
 	                <img alt="image" class="img-circle m-t-xs img-responsive" src="../static/new.jpg">
@@ -27,7 +27,7 @@ $query = mysql_query("SELECT * FROM category WHERE 1");
 	            </address>
 	        </div>
 	        <div class="clearfix"></div>
-<!-- 	            </a> -->
+	        </a>
 	    </div>
 	</div>
 
@@ -36,7 +36,7 @@ $query = mysql_query("SELECT * FROM category WHERE 1");
 		?>
 			<div class="col-lg-4">
 			    <div class="contact-box">
-		<!-- 	        <a href="profile.html"> -->
+			        <a href="edit.php?id=<?php echo $category['id']; ?>">
 			        <div class="col-sm-5">
 			            <div class="text-center">
 			                <img alt="image" class="img-circle m-t-xs img-responsive" src="../static/a3.jpg">
@@ -55,7 +55,7 @@ $query = mysql_query("SELECT * FROM category WHERE 1");
 			            </address>
 			        </div>
 			        <div class="clearfix"></div>
-		<!-- 	            </a> -->
+			        </a>
 			    </div>
 			</div>
 		<?php

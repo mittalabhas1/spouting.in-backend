@@ -5,9 +5,9 @@
                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                     <span class="clear">
                         <span class="block m-t-xs">
-                            <strong class="font-bold">Abhas Mittal</strong>
+                            <strong class="font-bold"><?php echo $user['name'] ?></strong>
                         </span>
-                        <span class="text-muted text-xs block">Super User</span>
+                        <span class="text-muted text-xs block"><?php echo $user['role'] ?></span>
                     </span>
                 </a>
             </div>
@@ -16,7 +16,7 @@
             <a href="../dashboard">
                 <i class="fa fa-th-large"></i>
                 <span class="nav-label">Dashboard</span>
-                <span class="pull-right label label-info">NEW</span>
+                <span class="pull-right label label-warning">Coming Soon</span>
             </a>
         </li>
         <li>
@@ -41,6 +41,7 @@
             <a href="../external-links">
                 <i class="fa fa-files-o"></i>
                 <span class="nav-label">Other Links</span>
+                <span class="pull-right label label-info">New</span>
             </a>
         </li>
     </ul>
