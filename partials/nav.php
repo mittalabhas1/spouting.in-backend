@@ -38,10 +38,16 @@
             </a>
         </li>
         <li>
+            <a href="../slider-images">
+                <i class="fa fa-image"></i>
+                <span class="nav-label">Slider</span>
+                <span class="pull-right label label-danger">Coming Soon</span>
+            </a>
+        </li>
+        <li>
             <a href="../external-links">
                 <i class="fa fa-files-o"></i>
                 <span class="nav-label">Other Links</span>
-                <span class="pull-right label label-info">New</span>
             </a>
         </li>
     </ul>
