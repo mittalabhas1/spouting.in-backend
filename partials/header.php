@@ -20,6 +20,9 @@
     <link href="../static/bootstrap.min.css" rel="stylesheet">
     <link href="../static/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="../static/style.min.css" rel="stylesheet">
+    <link href="../static/jquery-ui.css" rel="stylesheet">
+    <link href="../static/jquery-ui.structure.css" rel="stylesheet">
+    <link href="../static/jquery-ui.theme.css" rel="stylesheet">
     <link href="../static/main.css" rel="stylesheet">
 
 </head>

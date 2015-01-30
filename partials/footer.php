@@ -10,5 +10,8 @@
         </div>
     </div>
 
+    <script src="../static/jquery.js"></script>
+    <script src="../static/jquery-ui.js"></script>
+
 </body>
 </html>

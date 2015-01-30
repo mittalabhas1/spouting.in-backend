@@ -45,6 +45,12 @@
             </a>
         </li>
         <li>
+            <a href="../sort">
+                <i class="fa fa-sort"></i>
+                <span class="nav-label">Sort</span>
+            </a>
+        </li>
+        <li>
             <a href="../external-links">
                 <i class="fa fa-files-o"></i>
                 <span class="nav-label">Other Links</span>
