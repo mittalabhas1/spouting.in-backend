@@ -25,6 +25,9 @@
     <link href="../static/jquery-ui.theme.css" rel="stylesheet">
     <link href="../static/main.css" rel="stylesheet">
 
+    <script src="../static/jquery.js"></script>
+    <script src="../static/jquery-ui.js"></script>
+
 </head>
 
 <body>
