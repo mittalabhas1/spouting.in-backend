@@ -1,7 +1,7 @@
 <?php
 require_once('../partials/header.php');
 
-$query = mysql_query("SELECT product.id AS id, product.name AS name, product.code AS code, product.keyword AS keyword, product.description AS description, category.name AS category FROM product INNER JOIN category ON product.category = category.id WHERE 1");
+$query = mysql_query("SELECT product.id AS id, product.name AS name, product.code AS code, product.keyword AS keyword, product.description AS description, product.image AS image, category.name AS category FROM product INNER JOIN category ON product.category = category.id WHERE 1");
 ?>
 
 <div class="row">
@@ -40,7 +40,7 @@ $query = mysql_query("SELECT product.id AS id, product.name AS name, product.cod
 			        <a href="edit.php?id=<?php echo $product['id']; ?>">
 			        <div class="col-sm-5">
 			            <div class="text-center">
-			                <img alt="image" class="img-circle m-t-xs img-responsive" src="../static/a3.jpg">
+			                <img alt="image" class="img-circle m-t-xs img-responsive" src="../static/images/products/<?php echo $product['image'];?>">
 			                <div class="m-t-xs font-bold">
 			                	<?php echo $product['code']; ?>
 			                </div>

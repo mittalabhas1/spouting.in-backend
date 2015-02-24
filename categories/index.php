@@ -39,7 +39,7 @@ $query = mysql_query("SELECT * FROM category WHERE 1");
 			        <a href="edit.php?id=<?php echo $category['id']; ?>">
 			        <div class="col-sm-5">
 			            <div class="text-center">
-			                <img alt="image" class="img-circle m-t-xs img-responsive" src="../static/a3.jpg">
+			                <img alt="image" class="img-circle m-t-xs img-responsive" src="../static/images/categories/<?php echo $category['image'];?>">
 			                <div class="m-t-xs font-bold">
 			                	<?php echo $category['code']; ?>
 			                </div>

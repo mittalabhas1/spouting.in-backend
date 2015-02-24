@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.1
+-- version 4.0.4
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 29, 2015 at 06:36 PM
--- Server version: 5.5.24-log
--- PHP Version: 5.4.3
+-- Generation Time: Feb 20, 2015 at 01:49 PM
+-- Server version: 5.6.12-log
+-- PHP Version: 5.4.12
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 --
 -- Database: `spouting`
 --
-CREATE DATABASE `spouting` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+CREATE DATABASE IF NOT EXISTS `spouting` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `spouting`;
 
 -- --------------------------------------------------------
@@ -35,6 +35,7 @@ CREATE TABLE IF NOT EXISTS `category` (
   `keyword` varchar(255) NOT NULL,
   `description` text NOT NULL,
   `products` int(11) NOT NULL,
+  `image` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `code` (`code`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
@@ -43,19 +44,19 @@ CREATE TABLE IF NOT EXISTS `category` (
 -- Dumping data for table `category`
 --
 
-INSERT INTO `category` (`id`, `name`, `code`, `keyword`, `description`, `products`) VALUES
-(1, 'Pneumatic Accessories', 'CG-01', 'pneumatic-accessories', '', 5),
-(2, 'Driving Elements', 'CG-02', 'driving-elements', '', 10),
-(3, 'Elevator and Conveyor Spares', 'CG-03', 'elevator-and-conveyor-spares', '', 8),
-(4, 'Knobs and Handles', 'CG-04', 'knobs-and-handles', '', 4),
-(5, 'Perforated Sheets', 'CG-05', 'perforated-sheets', '', 6),
-(6, 'Plantsifter Accessories', 'CG-06', 'plantsifter-accessories', '', 8),
-(7, 'Pulse Jet Bag Filter Accessories', 'CG-07', 'pulse-jet-bag-filter-accessories', '', 3),
-(8, 'Spouting', 'CG-08', 'spouting', '', 12),
-(9, 'Miscellaneous', 'CG-09', 'miscellaneous', '', 6),
-(10, 'New Category', 'CG-10', 'new-category', 'My New Category', 0),
-(11, 'Another New Category', 'Cg-11', 'another-new-category', 'I have got no description for this category', 0),
-(12, 'qwerty', 'CG-12', 'qwerty', 'sfsd', 0);
+INSERT INTO `category` (`id`, `name`, `code`, `keyword`, `description`, `products`, `image`) VALUES
+(1, 'Pneumatic Accessories', 'CG-01', 'pneumatic-accessories', '', 5, 'a3.jpg'),
+(2, 'Driving Elements', 'CG-02', 'driving-elements', '', 10, 'a3.jpg'),
+(3, 'Elevator and Conveyor Spares', 'CG-03', 'elevator-and-conveyor-spares', '', 8, 'a3.jpg'),
+(4, 'Knobs and Handles', 'CG-04', 'knobs-and-handles', '', 4, 'a3.jpg'),
+(5, 'Perforated Sheets', 'CG-05', 'perforated-sheets', '', 6, 'a3.jpg'),
+(6, 'Plantsifter Accessories', 'CG-06', 'plantsifter-accessories', '', 8, 'a3.jpg'),
+(7, 'Pulse Jet Bag Filter Accessories', 'CG-07', 'pulse-jet-bag-filter-accessories', '', 3, 'a3.jpg'),
+(8, 'Spouting', 'CG-08', 'spouting', '', 12, 'a3.jpg'),
+(9, 'Miscellaneous', 'CG-09', 'miscellaneous', '', 6, 'a3.jpg'),
+(10, 'New Category', 'CG-10', 'new-category', 'My New Category', 0, 'a3.jpg'),
+(11, 'Another New Category', 'Cg-11', 'another-new-category', 'I have got no description for this category', 0, 'a3.jpg'),
+(12, 'qwerty', 'CG-12', 'qwerty', 'sfsd', 0, 'a3.jpg');
 
 -- --------------------------------------------------------
 
@@ -130,6 +131,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `code` varchar(10) NOT NULL,
   `keyword` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
+  `image` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id` (`category`),
   KEY `category` (`category`)
@@ -139,10 +141,10 @@ CREATE TABLE IF NOT EXISTS `product` (
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`id`, `category`, `name`, `code`, `keyword`, `description`) VALUES
-(1, 6, 'qwertyuiop', 'PS-01', 'dfgdf', 'description of my product'),
-(2, 9, 'Product 2', 'MISC-02', 'product-two', 'Description'),
-(3, 7, 'QWERTY', 'PR-02', 'qwerty', 'fdgfdgdfgfdg');
+INSERT INTO `product` (`id`, `category`, `name`, `code`, `keyword`, `description`, `image`) VALUES
+(1, 6, 'qwertyuiop', 'PS-01', 'dfgdf', 'description of my product', 'a3.jpg'),
+(2, 9, 'Product 2', 'MISC-02', 'product-two', 'Description', 'new.jpg'),
+(3, 7, 'QWERTY', 'PR-02', 'qwerty', 'fdgfdgdfgfdg', 'new.jpg');
 
 -- --------------------------------------------------------
 

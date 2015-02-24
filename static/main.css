@@ -30,3 +30,8 @@ textarea.form-control{
 	height: 200px;
 	overflow: hidden;
 }
+
+.img-circle-product{
+	width: 35%;
+	display: inline;
+}
