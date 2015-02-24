@@ -46,6 +46,10 @@ textarea.form-control{
 	cursor: pointer;
 }
 
+#sortables { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+#sortables li { margin: 3px 3px 3px 3px; padding-left: 1.5em; padding-top: 0.4em; padding-bottom: 0.4em; font-size: 1.4em; height: 1.8em; }
+#sortables li span { position: absolute; margin-left: -1.3em; }
+
 .sort-products>*{
 	background: none !important;
 }
