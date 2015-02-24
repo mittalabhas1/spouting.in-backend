@@ -36,6 +36,7 @@ CREATE TABLE IF NOT EXISTS `category` (
   `description` text NOT NULL,
   `products` int(11) NOT NULL,
   `image` varchar(100) NOT NULL,
+  `ord_no` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `code` (`code`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
