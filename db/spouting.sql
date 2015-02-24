@@ -133,6 +133,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `keyword` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
   `image` varchar(100) NOT NULL,
+  `ord_no` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id` (`category`),
   KEY `category` (`category`)

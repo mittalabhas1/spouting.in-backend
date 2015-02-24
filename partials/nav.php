@@ -45,9 +45,15 @@
             </a>
         </li>
         <li>
-            <a href="../sort">
+            <a href="../sort-categories">
                 <i class="fa fa-sort"></i>
-                <span class="nav-label">Sort</span>
+                <span class="nav-label">Sort Categories</span>
+            </a>
+        </li>
+        <li>
+            <a href="../sort-products">
+                <i class="fa fa-sort"></i>
+                <span class="nav-label">Sort Products</span>
             </a>
         </li>
         <li>

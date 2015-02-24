@@ -8,8 +8,8 @@ $categories = mysql_query("SELECT * FROM category ORDER BY `ord_no` ASC");
   $(document).ready(function(){
     $('#sortables').sortable();
   });
-  function saveOrder(sortThis){
-    var data = $('#sortables.'+sortThis).sortable('serialize');
+  function saveOrder(){
+    var data = $('#sortables').sortable('serialize');
     $.ajax({
       url: 'update.php',
       type: 'POST',
@@ -25,7 +25,7 @@ $categories = mysql_query("SELECT * FROM category ORDER BY `ord_no` ASC");
     });
   }
 </script>
-<ul id="sortables" class="sort-products user-select-none categories">
+<ul id="sortables" class="sort-products user-select-none">
   <?php 
   while ($category = mysql_fetch_assoc($categories)) {
   ?>
@@ -34,7 +34,7 @@ $categories = mysql_query("SELECT * FROM category ORDER BY `ord_no` ASC");
   }
   ?>
 </ul>
-<button class="btn btn-success m-l-xxs" onclick="saveOrder('categories')">Save Order</button>
+<button class="btn btn-success m-l-xxs" onclick="saveOrder()">Save Order</button>
 <div class="alert inline hidden" id="alert" style="padding: 10px;"></div>
 
 <?php
