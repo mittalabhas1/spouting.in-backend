@@ -21,17 +21,25 @@ if (isset($_POST['pages'])) {
 </style>
 <script type="text/javascript">
   $(document).ready(function(){
-    $('#sortables').sortable({
-      update: function(event, ui) {
-        var data = $(this).sortable('serialize');
-        $.ajax({
-          url: 'update.php',
-          type: 'POST',
-          data: data
-        });
-      }
-    });
+    $('#sortables').sortable();
   });
+  function saveOrder(){
+    var data = $('#sortables').sortable('serialize');
+    console.log(data);
+    $.ajax({
+      url: 'update.php',
+      type: 'POST',
+      data: data
+    }).done(function(){
+      $('#alert').removeClass('hidden alert-danger');
+      $('#alert').addClass('alert-success');
+      $('#alert').html('Category Order Updated !');
+    }).fail(function(){
+      $('#alert').removeClass('hidden alert-success');
+      $('#alert').addClass('alert-danger');
+      $('#alert').html('Error. Please try again later !');
+    });
+  }
 </script>
 <ul id="sortables" class="sort-products user-select-none">
   <?php 
@@ -42,7 +50,8 @@ if (isset($_POST['pages'])) {
   }
   ?>
 </ul>
-
+<button class="btn btn-success m-l-xxs" onclick="saveOrder()">Save Order</button>
+<div class="alert inline hidden" id="alert" style="padding: 10px;"></div>
 
 <?php
 require_once('../partials/footer.php');
