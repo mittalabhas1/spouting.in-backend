@@ -33,10 +33,18 @@
     <link href="../static/main.css" rel="stylesheet">
     <script type="text/javascript">
     	function pushToWebsite(){
-    		$.ajax('../partials/getPushData.php').done(function(data){
+    		$.ajax('../partials/getPushData.php')
+    		.done(function(data){
 				console.log(data);
-			}).fail(function(error){
+				$('#data-upload-alert').removeClass('hidden alert-danger');
+				$('#data-upload-alert').addClass('alert-success');
+				$('#data-upload-alert').html('<i class="fa fa-check"></i> Data successfully uploaded to spouting.in');
+			})
+			.fail(function(error){
 				console.log(error);
+				$('#data-upload-alert').removeClass('hidden alert-success');
+				$('#data-upload-alert').addClass('alert-danger');
+				$('#data-upload-alert').html('<i class="fa fa-times"></i> Data uploaded failed !');
 			});
     	};
     </script>
@@ -55,6 +63,7 @@
 		        	<a class="minimalize-styl-2 btn btn-success" onclick="pushToWebsite();">
 	    	          <i class="fa fa-upload"></i> PUSH TO WEBSITE
 	    	        </a>
+	    	        <a class="minimalize-styl-2 alert hidden" id="data-upload-alert"></a>
 		            <ul class="nav navbar-top-links navbar-right">
 		                <li>
 		                    <span class="m-r-sm text-muted welcome-message">Welcome to SPOUTING+</span>
