@@ -17,16 +17,29 @@
 
     <link href="../static/favicon.ico" rel="icon" type="image/x-icon">
 
+    <!-- External CSS -->
     <link href="../static/bootstrap.min.css" rel="stylesheet">
     <link href="../static/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="../static/style.min.css" rel="stylesheet">
     <link href="../static/jquery-ui.css" rel="stylesheet">
     <link href="../static/jquery-ui.structure.css" rel="stylesheet">
     <link href="../static/jquery-ui.theme.css" rel="stylesheet">
-    <link href="../static/main.css" rel="stylesheet">
 
-    <script src="../static/jquery.js"></script>
-    <script src="../static/jquery-ui.js"></script>
+    <!-- External Scripts -->
+    <script type="text/javascript" src="../static/jquery.js"></script>
+    <script type="text/javascript" src="../static/jquery-ui.js"></script>
+
+    <!-- Custom CSS, Scripts -->
+    <link href="../static/main.css" rel="stylesheet">
+    <script type="text/javascript">
+    	function pushToWebsite(){
+    		$.ajax('../partials/getPushData.php').done(function(data){
+				console.log(data);
+			}).fail(function(error){
+				console.log(error);
+			});
+    	};
+    </script>
 
 </head>
 
@@ -39,6 +52,9 @@
         <div id="page-wrapper" class="gray-bg">
 	        <div class="row border-bottom">
 		        <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+		        	<a class="minimalize-styl-2 btn btn-success" onclick="pushToWebsite();">
+	    	          <i class="fa fa-upload"></i> PUSH TO WEBSITE
+	    	        </a>
 		            <ul class="nav navbar-top-links navbar-right">
 		                <li>
 		                    <span class="m-r-sm text-muted welcome-message">Welcome to SPOUTING+</span>
