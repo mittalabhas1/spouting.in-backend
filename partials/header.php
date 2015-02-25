@@ -28,6 +28,7 @@
     <!-- External Scripts -->
     <script type="text/javascript" src="../static/jquery.js"></script>
     <script type="text/javascript" src="../static/jquery-ui.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
 
     <!-- Custom CSS, Scripts -->
     <link href="../static/main.css" rel="stylesheet">
@@ -39,6 +40,9 @@
 				$('#data-upload-alert').removeClass('hidden alert-danger');
 				$('#data-upload-alert').addClass('alert-success');
 				$('#data-upload-alert').html('<i class="fa fa-check"></i> Data successfully uploaded to spouting.in');
+				var myFirebaseRef = new Firebase("https://spouting-in.firebaseio.com/");
+				console.log(myFirebaseRef);
+				myFirebaseRef.set({data: data});
 			})
 			.fail(function(error){
 				console.log(error);
