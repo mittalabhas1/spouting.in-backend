@@ -9,7 +9,7 @@ while($category = mysql_fetch_assoc($query)){
 }
 
 // Products
-$query = mysql_query("SELECT product.name AS name, product.keyword AS keyword, product.code AS code, product.image AS image, category.name AS category, product.description AS description, product.ord_no AS ord_no FROM `product` INNER JOIN category ON category.id = product.category WHERE 1 ORDER BY product.category ASC, product.ord_no DESC") or die(mysql_error());
+$query = mysql_query("SELECT product.name AS name, product.keyword AS keyword, product.code AS code, product.image AS image, category.keyword AS category, product.description AS description, product.ord_no AS ord_no FROM `product` INNER JOIN category ON category.id = product.category WHERE 1 ORDER BY product.category ASC, product.ord_no DESC") or die(mysql_error());
 $products = array();
 while($product = mysql_fetch_assoc($query)){
 	array_push($products, json_decode(json_encode($product)));
