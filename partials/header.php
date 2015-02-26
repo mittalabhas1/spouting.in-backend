@@ -42,7 +42,7 @@
 				$('#data-upload-alert').html('<i class="fa fa-check"></i> Data successfully uploaded to spouting.in');
 				var myFirebaseRef = new Firebase("https://spouting-in.firebaseio.com/");
 				console.log(myFirebaseRef);
-				myFirebaseRef.set({data: data});
+				myFirebaseRef.set({data: JSON.parse(data)});
 			})
 			.fail(function(error){
 				console.log(error);
