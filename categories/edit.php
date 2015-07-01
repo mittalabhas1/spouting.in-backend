@@ -1,57 +1,75 @@
 <?php
 require_once('../partials/header.php');
 
+$length = 10;
+
+$randomString = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, $length);
+
 if (isset($_POST['update']) or isset($_POST['add'])){
-$target_dir = "../static/images/categories/";
-$filename = basename($_FILES["image"]["name"]);
-$target_file = $target_dir . $filename;
-$uploadOk = 1;
-$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-// Check if image file is a actual image or fake image
-if(isset($_POST["update"])) {
-    $check = getimagesize($_FILES["image"]["tmp_name"]);
-    if($check !== false) {
-        $uploadOk = 1;
-    } else {
-        echo "File is not an image.";
+    $target_dir = "../static/images/categories/";
+    $filename = basename($_FILES["image"]["name"]);
+    $target_file = $target_dir . $filename;
+    $uploadOk = 1;
+    $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+
+    $newFileName = str_replace(" ","-",$_POST['keyword']);
+
+    // Check if image file is a actual image or fake image
+    if(isset($_POST["update"])) {
+        $newFileName = str_replace(" ","-",$_POST['keywordValue']);
+        $check = getimagesize($_FILES["image"]["tmp_name"]);
+        if($check !== false) {
+            $uploadOk = 1;
+        } else {
+            $uploadOk = 0;
+        }
+    }
+
+    $target_file = $target_dir.$newFileName."-".$randomString.".".$imageFileType;
+
+    $filename = $newFileName."-".$randomString.".".$imageFileType;
+
+
+if (isset($_POST["update"]) && !$uploadOk) {
+    # code...
+    $query = mysql_query("UPDATE category SET name='$_POST[name]', code='$_POST[code]', description='$_POST[description]' WHERE id='$_POST[id]'") or die(mysql_error());
+} else{
+    if (file_exists($target_file)) {
+        chmod($target_file, 0755); 
+        unlink($target_file);
+    }
+    // Check file size
+    if ($_FILES["image"]["size"] > 10240000) {
+        echo "Sorry, your file is too large.";
         $uploadOk = 0;
+    }
+    // Allow certain file formats
+    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" && $imageFileType != "JPG" && $imageFileType != "PNG" && $imageFileType != "JPEG" && $imageFileType != "GIF" ) {
+        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+        $uploadOk = 0;
+    }
+    // Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+        echo "Sorry, your file was not uploaded.";
+    // if everything is ok, try to upload file
+    } else {
+        if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+            echo "Success";
+        } else {
+            echo "Sorry, there was an error uploading your file.";
+        }
+    }
+
+    if (isset($_POST['update']) && $uploadOk) {
+        $query = mysql_query("UPDATE category SET name='$_POST[name]', code='$_POST[code]', description='$_POST[description]', image='$filename' WHERE id='$_POST[id]'") or die(mysql_error());
+    }
+
+    if (isset($_POST['add']) && $uploadOk) {
+        $query = mysql_query("INSERT INTO category SET name='$_POST[name]', keyword='$_POST[keyword]', code='$_POST[code]', description='$_POST[description]', image='$filename'") or die(mysql_error());
+        header('location: ../categories');
     }
 }
 // Check if file already exists
-if (file_exists($target_file)) {
-    echo "Sorry, file already exists.";
-    $uploadOk = 0;
-}
-// Check file size
-if ($_FILES["image"]["size"] > 10240000) {
-    echo "Sorry, your file is too large.";
-    $uploadOk = 0;
-}
-// Allow certain file formats
-if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" && $imageFileType != "JPG" && $imageFileType != "PNG" && $imageFileType != "JPEG" && $imageFileType != "GIF" ) {
-    echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-    $uploadOk = 0;
-}
-// Check if $uploadOk is set to 0 by an error
-if ($uploadOk == 0) {
-    echo "Sorry, your file was not uploaded.";
-// if everything is ok, try to upload file
-} else {
-    if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-        ;
-    } else {
-        echo "Sorry, there was an error uploading your file.";
-    }
-}
-}
-
-if (isset($_POST['update'])) {
-    $query = mysql_query("UPDATE category SET name='$_POST[name]', code='$_POST[code]', description='$_POST[description]', image='$filename' WHERE id='$_POST[id]'") or die(mysql_error());
-}
-
-if (isset($_POST['add'])) {
-    $query = mysql_query("INSERT INTO category SET name='$_POST[name]', keyword='$_POST[keyword]', code='$_POST[code]', description='$_POST[description]', image='$filename'") or die(mysql_error());
-    header('location: ../categories');
 }
 
 $category = false;
@@ -98,6 +116,7 @@ if(isset($_GET['id'])){
 
                     <div class="col-lg-9">
                     	<input type="text" placeholder="Keyword" name="keyword" value="<?php echo $category['keyword']; ?>" class="form-control" <?php if($category){echo 'disabled';} ?>>
+                        <input type="hidden" placeholder="Keyword" name="keywordValue" value="<?php echo $category['keyword']; ?>" class="form-control">
                     </div>
                 </div>
                 <div class="form-group">
