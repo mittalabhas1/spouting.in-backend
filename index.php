@@ -59,7 +59,7 @@
                         echo '<div class="label-danger">Invalid Credentials!</div>';
                     }
                 ?>
-                <a href="#"><small>Forgot password?</small></a>
+                <!-- <a href="#"><small>Forgot password?</small></a> -->
             </form>
         </div>
     </div>

@@ -15,8 +15,13 @@ while($product = mysql_fetch_assoc($query)){
 	array_push($products, json_decode(json_encode($product)));
 }
 
+// Settings
+$query = mysql_query("SELECT * FROM `company_details` WHERE 1") or die(mysql_error());
+$settings = mysql_fetch_assoc($query);
+$settings = json_decode(json_encode($settings));
+
 // Building Data
-$data = array('categories' => $categories, 'products' => $products);
+$data = array('categories' => $categories, 'products' => $products, 'settings' => $settings);
 $data = json_decode(json_encode($data));
 
 // Returning Data
