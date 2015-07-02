@@ -13,7 +13,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>SPOUTING+</title>
+    <title>TMMS+</title>
 
     <link href="../static/favicon.ico" rel="icon" type="image/x-icon">
 
@@ -70,7 +70,7 @@
 	    	        <a class="minimalize-styl-2 alert hidden" id="data-upload-alert"></a>
 		            <ul class="nav navbar-top-links navbar-right">
 		                <li>
-		                    <span class="m-r-sm text-muted welcome-message">Welcome to SPOUTING+</span>
+		                    <span class="m-r-sm text-muted welcome-message">Welcome to TMMS+</span>
 		                </li>
 		                <li>
 		                    <a href="../?logout=1">

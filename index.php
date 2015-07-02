@@ -26,7 +26,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>SPOUTING+ | Login</title>
+    <title>TMMS+ | Login</title>
 
     <link href="static/bootstrap.min.css" rel="stylesheet">
     <link href="static/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -37,14 +37,14 @@
 
 <body class="gray-bg">
 
-    <div class="middle-box text-center loginscreen">
+    <div class="middle-box text-center loginscreen" style="margin-top: -100px">
         <div>
             <div>
 
-                <h1 class="logo-name">SP+</h1>
+                <!-- <h1 class="logo-name">TMMS+</h1> -->
 
             </div>
-            <h3>Welcome to SPOUTING+</h3>
+            <h3>Welcome to TMMS+</h3>
             <form class="m-t" role="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
                 <div class="form-group">
                     <input type="text" name="username" class="form-control" placeholder="Username" required>
